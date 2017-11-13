@@ -70,13 +70,13 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
                 let item_name = info?["itemName"] as! String?
                 let company = "Test"
                 let profileImageUrl = info?["profileImageUrl"] as! String?
-                let item_amount = info?["amount"] as! String?
+//                let item_amount = info?["amount"] as! String?
                 let timeStamp = info?["timestamp"] as! String?
                 
          
                 
                 
-                let activity = ActivityFeed(username: username, company: company, item_name: item_name, item_amount: item_amount, profileImageUrl: profileImageUrl)
+                let activity = ActivityFeed(username: username, company: company, item_name: item_name, item_amount: "item_amount", profileImageUrl: profileImageUrl)
                 self.feed.append(activity)
             }
             // Gotta Read More About This ****

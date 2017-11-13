@@ -40,7 +40,7 @@ class ActivityCommentController: UITableViewController {
         
         commentAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (action:UIAlertAction) in
             if let commentContent = commentAlert.textFields?.first?.text{
-                let comment = ActivityComment(content: commentContent, username: "USeR")
+                let comment = ActivityComment(content: commentContent, username: Firebase.Auth.auth().currentUser!.uid)
                 let commentReference = self.databaseRef.child(commentContent.lowercased())
                 commentReference.setValue(comment.toAnyObject())
             }
